@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3dekhostorage00704e08",
+  "bucketName": "dekho-storage-00704e08",
+  "policyUUID": "019456c0",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

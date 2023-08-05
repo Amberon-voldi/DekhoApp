@@ -1,0 +1,139 @@
+type SliderModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  image: String
+  link: String
+  isClickable: Boolean
+}
+
+type Message @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  message: String
+  isEdited: Boolean
+  reaction: [String]
+  isReply: Boolean
+  messageStatus: MessageStatus
+  time: AWSDateTime
+  replyTo: String
+  chatcontainerID: ID! @index(name: "byChatContainer")
+  userID: ID! @index(name: "byUser")
+}
+
+enum MessageStatus {
+  SENT
+  SEEN
+  SENDING
+}
+
+type Transaction @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  from: String
+  to: String
+  time: String
+  amount: String
+  transactionType: String
+}
+
+type ChatContainer @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  isGroup: Boolean
+  startedby: String
+  members: [String]!
+  startTime: AWSDateTime
+  icon: String
+  title: String
+  description: String
+  lastMessage: String
+  lastMessageTime: AWSDateTime
+  Messages: [Message] @hasMany(indexName: "byChatContainer", fields: ["id"])
+}
+
+type PostModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  time: AWSDateTime
+  videourl: String
+  isReel: Boolean
+  caption: String
+  isPublic: Boolean
+  previewimage: String
+  shareCount: Int
+  isCommentDisabled: Boolean
+  pfp: String
+  username: String
+  media: [String]
+  viewCount: [String]
+  userID: ID! @index(name: "byUser")
+  song: String
+  comments: [CommentModel]!
+  arrayLikes: [String]
+  isAdultContent: Boolean
+}
+
+type Follow @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  following: String
+  followedby: String
+  metaData: String
+  time: AWSDateTime
+  accepted: Boolean
+  acceptedOn: AWSDateTime
+  username: String
+  pfp: String
+}
+
+type UserStory {
+  privacyType: Boolean
+  visibleto: [String]
+  contentUrl: [String]!
+  userID: String
+  music: String
+  likes: [AWSJSON]
+  time: AWSDateTime
+}
+
+type CommentModel {
+  comment: String
+  likes: [String]
+  isReply: Boolean
+  replyTo: String
+  username: String
+  pfp: String
+  isEdited: Boolean
+  time: AWSDateTime
+  userID: String
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  uid: String
+  username: String
+  nameLowerCase: String
+  email: String
+  name: String
+  phone: String
+  verified: Boolean
+  bio: String
+  gender: String
+  address: String
+  pfp: String
+  workplace: [String]
+  married: Boolean
+  hobbies: [String]
+  blockedusers: [String]
+  blockedposts: [String]
+  dob: String
+  coins: Int
+  lastredem: String
+  accountType: String
+  story: UserStory
+  storyUploaded: Boolean
+  banner: String
+  Posts: [PostModel] @hasMany(indexName: "byUser", fields: ["id"])
+  country: String
+  isActive: Boolean
+  showActivityStatus: Boolean
+  showMatureContent: Boolean
+  referercode: String
+  refercode: String
+  Messages: [Message] @hasMany(indexName: "byUser", fields: ["id"])
+}
+ 

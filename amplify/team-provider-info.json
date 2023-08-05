@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dekho-staging-201743-authRole",
+      "UnauthRoleArn": "arn:aws:iam::399132858537:role/amplify-dekho-staging-201743-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::399132858537:role/amplify-dekho-staging-201743-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dekho-staging-201743-deployment",
+      "UnauthRoleName": "amplify-dekho-staging-201743-unauthRole",
+      "StackName": "amplify-dekho-staging-201743",
+      "StackId": "arn:aws:cloudformation:us-east-1:399132858537:stack/amplify-dekho-staging-201743/2ec55b90-8948-11ed-82d8-0ea29613d183",
+      "AmplifyAppId": "d1x4ajdif2obfx"
+    },
+    "categories": {
+      "auth": {
+        "Dekho": {}
+      },
+      "storage": {
+        "s3dekhostorage00704e08": {}
+      },
+      "api": {
+        "Dekho": {}
+      }
+    }
+  }
+}

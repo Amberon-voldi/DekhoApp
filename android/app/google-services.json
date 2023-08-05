@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "474168901144",
+    "project_id": "dekho-372014",
+    "storage_bucket": "dekho-372014.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474168901144:android:fc83e76f25fce9b8548d6d",
+        "android_client_info": {
+          "package_name": "com.mythics.dekho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474168901144-ctiekg9buafmu661ilv3qfjrge0cg7lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAes_oli60KV7LmUylL-goyHgMQ4yjYeH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474168901144-ctiekg9buafmu661ilv3qfjrge0cg7lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
